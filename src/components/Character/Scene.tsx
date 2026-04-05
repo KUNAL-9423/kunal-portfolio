@@ -72,7 +72,17 @@ const Scene = () => {
           window.addEventListener("resize", () =>
             handleResize(renderer, camera, canvasDiv, character)
           );
+        } else {
+          // GLB missing — complete loader anyway
+          progress.loaded().then(() => {
+            light.turnOnLights();
+          });
         }
+      }).catch(() => {
+        // GLB failed — complete loader anyway
+        progress.loaded().then(() => {
+          light.turnOnLights();
+        });
       });
 
       let mouse = { x: 0, y: 0 },
