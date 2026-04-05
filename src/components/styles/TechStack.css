@@ -1,0 +1,119 @@
+.techstack {
+  padding: 80px 0 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.techstack h2 {
+  font-size: 70px;
+  font-weight: 400;
+  text-align: center;
+  background: linear-gradient(0deg, #7c3aed, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin: 0 0 10px 0;
+  position: relative;
+  z-index: 2;
+  line-height: 1.1;
+  display: block;
+  width: 100%;
+}
+
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 900px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 20px 18px;
+  width: 120px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  cursor: default;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--tech-color, #7c3aed);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.tech-card:hover::before {
+  opacity: 1;
+}
+
+.tech-icon-wrap {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-icon-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.15));
+}
+
+.tech-card span {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .techstack h2 {
+    font-size: 45px;
+  }
+
+  .tech-card {
+    width: 90px;
+    padding: 18px 12px 14px;
+  }
+
+  .tech-icon-wrap {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tech-card span {
+    font-size: 11px;
+  }
+}
