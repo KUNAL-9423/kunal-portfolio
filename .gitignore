@@ -27,6 +27,4 @@ dist-ssr
 backup/
 .env
 
-# Skip corrupt GLB
-public/models/character.glb
-public/models/character.enc
+
